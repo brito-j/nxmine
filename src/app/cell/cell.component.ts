@@ -24,4 +24,6 @@ export class CellComponent implements OnInit {
   }
 
   setMine() { this.isMine = true; this.isX = false; this.isO = false; }
+
+
 }

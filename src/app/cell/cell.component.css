@@ -10,3 +10,9 @@
   width: 50%;
   margin: 0 auto;
 }
+
+.card.clickable:hover
+{
+  box-shadow: 0 0.125rem 0 0 #485969;
+  border: 1px solid #485969;
+}
