@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CellComponent implements OnInit {
 
+  isX: boolean = false;
+  isO: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  setMark(mark: string) {
+    switch (mark) {
+      case 'x' : { this.isX = true; break; }
+      case 'o' : { this.isO = true; break; }
+    }
+  }
 }
