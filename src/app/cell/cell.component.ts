@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {GameService} from '../game.service';
 
 @Component({
   selector: 'app-cell',
@@ -11,15 +12,15 @@ export class CellComponent implements OnInit {
   isO: boolean = false;
   isMine: boolean = false;
 
-  constructor() { }
+  constructor(private gameService: GameService) { }
 
   ngOnInit() {
   }
 
-  @Input('loc') loc: string;
+  @Input('loc') loc: number;
 
   setMark(mark: string) {
-    console.log(this.loc);
+    this.gameService.updateGrid(this.loc, mark);
     switch (mark) {
       case 'x' : { this.isX = true; break; }
       case 'o' : { this.isO = true; break; }
