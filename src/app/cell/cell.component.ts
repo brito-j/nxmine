@@ -25,6 +25,7 @@ export class CellComponent implements OnInit {
       case 'x' : { this.isX = true; break; }
       case 'o' : { this.isO = true; break; }
     }
+    console.log(this.gameService.hasWinner());
   }
 
   setMine() { this.isMine = true; this.isX = false; this.isO = false; }
