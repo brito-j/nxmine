@@ -9,6 +9,7 @@ export class CellComponent implements OnInit {
 
   isX: boolean = false;
   isO: boolean = false;
+  isMine: boolean = false;
 
   constructor() { }
 
@@ -21,4 +22,6 @@ export class CellComponent implements OnInit {
       case 'o' : { this.isO = true; break; }
     }
   }
+
+  setMine() { this.isMine = true; this.isX = false; this.isO = false; }
 }
