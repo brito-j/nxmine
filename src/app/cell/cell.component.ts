@@ -12,6 +12,8 @@ export class CellComponent implements OnInit {
   isO: boolean = false;
   isMine: boolean = false;
 
+  turn: string = '';
+
   constructor(private gameService: GameService) { }
 
   ngOnInit() {
@@ -20,15 +22,18 @@ export class CellComponent implements OnInit {
   @Input('loc') loc: number;
 
   setMark(mark: string) {
-    this.gameService.updateGrid(this.loc, mark);
     switch (mark) {
       case 'x' : { this.isX = true; break; }
       case 'o' : { this.isO = true; break; }
     }
-    console.log(this.gameService.hasWinner());
+    this.gameService.updateGrid(this.loc, mark);
   }
 
   setMine() { this.isMine = true; this.isX = false; this.isO = false; }
 
-
+  getTurnMark() {
+    if (this.isX || this.isO) { return ''; }
+    this.gameService.turnMark().subscribe(mark => this.turn = mark);
+    return this.turn;
+  }
 }

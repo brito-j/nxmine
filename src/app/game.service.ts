@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {Observable, of} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,8 @@ export class GameService {
   constructor() { }
 
   grid: string[] = ['', '', '', '', '', '', '', '', ''];
+
+  turnCount: number = 0;
 
   updateGrid(loc: number, val: string) { this.grid[loc] = val; }
 
@@ -21,4 +24,6 @@ export class GameService {
            (this.grid[0] == this.grid[4] && this.grid[4] == this.grid[8] && this.grid[4].length) ||
            (this.grid[2] == this.grid[4] && this.grid[4] == this.grid[6] && this.grid[4].length);
   }
+
+  turnMark(): Observable<any> { this.turnCount++; return of(this.turnCount % 2 == 0 ? 'x' : 'o'); }
 }
