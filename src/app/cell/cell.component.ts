@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-cell',
@@ -16,7 +16,10 @@ export class CellComponent implements OnInit {
   ngOnInit() {
   }
 
+  @Input('loc') loc: string;
+
   setMark(mark: string) {
+    console.log(this.loc);
     switch (mark) {
       case 'x' : { this.isX = true; break; }
       case 'o' : { this.isO = true; break; }
