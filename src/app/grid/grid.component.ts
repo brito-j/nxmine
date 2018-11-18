@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {GameService} from '../game.service';
 
 @Component({
   selector: 'app-grid',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GridComponent implements OnInit {
 
-  constructor() { }
+  constructor(private gameService: GameService) { }
 
   ngOnInit() {
   }
 
+  getMineLoc(index: number): boolean { return this.gameService.mineLoc[index];
+  }
 }
