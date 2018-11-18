@@ -33,6 +33,5 @@ export class GameService {
     for (let i = 0; i < 9; i++) { this.mineLoc[i] = false; }
     const loc = Math.floor(Math.random() * 8);
     this.mineLoc[loc] = true;
-    console.log(loc);
   }
 }
