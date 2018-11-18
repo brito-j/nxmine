@@ -12,6 +12,8 @@ export class GameService {
 
   turnCount: number = 0;
 
+  mineLoc: boolean[] = [false, false, false, false, false, false, false, false, false];
+
   updateGrid(loc: number, val: string) { this.grid[loc] = val; }
 
   hasWinner() {
@@ -26,4 +28,11 @@ export class GameService {
   }
 
   turnMark(): Observable<any> { this.turnCount++; return of(this.turnCount % 2 == 0 ? 'x' : 'o'); }
+
+  setMineLoc() {
+    for (let i = 0; i < 9; i++) { this.mineLoc[i] = false; }
+    const loc = Math.floor(Math.random() * 8);
+    this.mineLoc[loc] = true;
+    console.log(loc);
+  }
 }
