@@ -22,6 +22,7 @@ export class CellComponent implements OnInit {
   @Input('loc') loc: number;
 
   setMark(mark: string) {
+    if (this.gameService.hasWinner()) { return; }
     switch (mark) {
       case 'x' : { this.isX = true; break; }
       case 'o' : { this.isO = true; break; }
