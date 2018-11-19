@@ -7,12 +7,14 @@ import { GridComponent } from './grid/grid.component';
 import { ClarityModule } from '@clr/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CellComponent } from './cell/cell.component';
+import { PlayComponent } from './play/play.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GridComponent,
-    CellComponent
+    CellComponent,
+    PlayComponent
   ],
   imports: [
     BrowserModule,
