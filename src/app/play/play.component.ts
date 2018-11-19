@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {GameService} from '../game.service';
 
 @Component({
   selector: 'app-play',
@@ -11,53 +12,61 @@ export class PlayComponent implements OnInit {
 
   borderStyle: string = '1px solid #485969';
 
-  markBoxes: string[] = ['ex1', 'oh1', 'ex2', 'oh2'];
+  markBoxes: string[] = ['x1', 'o1', 'x2', 'o2'];
 
   showGrid: boolean = false;
 
   showMarkSelection: boolean = true;
 
-  constructor() {
+  hasSelection: boolean = false;
+
+  constructor(private gameService: GameService) {
   }
 
   ngOnInit() {
   }
 
-  selectMark(markBox: number) {
+  selectMark(markCard: number) {
+    this.hasSelection = true;
+
     for (let i = 0; i < this.markBoxes.length; i++) {
       document.getElementById(this.markBoxes[i]).removeAttribute('style');
     }
 
-    switch (markBox) {
+    switch (markCard) {
       case 0:
-        document.getElementById('ex1').style.boxShadow = this.boxShadowStyle;
-        document.getElementById('ex1').style.border = this.borderStyle;
-        document.getElementById('oh2').style.boxShadow = this.boxShadowStyle;
-        document.getElementById('oh2').style.border = this.borderStyle;
+        this.styleCard("x1", "o2");
+        this.setPlayer('x', 'o');
         break;
       case 1:
-        document.getElementById('oh1').style.boxShadow = this.boxShadowStyle;
-        document.getElementById('oh1').style.border = this.borderStyle;
-        document.getElementById('ex2').style.boxShadow = this.boxShadowStyle;
-        document.getElementById('ex2').style.border = this.borderStyle;
+        this.styleCard("o1", "x2");
+        this.setPlayer('o', 'x');
         break;
       case 2:
-        document.getElementById('ex2').style.boxShadow = this.boxShadowStyle;
-        document.getElementById('ex2').style.border = this.borderStyle;
-        document.getElementById('oh1').style.boxShadow = this.boxShadowStyle;
-        document.getElementById('oh1').style.border = this.borderStyle;
+        this.styleCard("o1", "x2");
+        this.setPlayer('o', 'x');
         break;
       case 3:
-        document.getElementById('oh2').style.boxShadow = this.boxShadowStyle;
-        document.getElementById('oh2').style.border = this.borderStyle;
-        document.getElementById('ex1').style.boxShadow = this.boxShadowStyle;
-        document.getElementById('ex1').style.border = this.borderStyle;
+        this.styleCard("x1", "o2");
+        this.setPlayer('x', 'o');
     }
   }
 
   startGame() {
     this.showMarkSelection = false;
     this.showGrid = true;
+  }
+
+  styleCard(playerOneCard: string, playerTwoCard: string) {
+    document.getElementById(playerOneCard).style.boxShadow = this.boxShadowStyle;
+    document.getElementById(playerOneCard).style.border = this.borderStyle;
+    document.getElementById(playerTwoCard).style.boxShadow = this.boxShadowStyle;
+    document.getElementById(playerTwoCard).style.border = this.borderStyle;
+  }
+
+  setPlayer(playerOneMark: string, playerTwoMark: string) {
+    this.gameService.playerOne = playerOneMark;
+    this.gameService.playerTwo = playerTwoMark;
   }
 
 }
