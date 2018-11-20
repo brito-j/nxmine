@@ -44,4 +44,9 @@ export class CellComponent implements OnChanges {
   clearMark() { this.isX = false; this.isO = false; this.isMine = false; }
 
   isMarked() { return this.isX || this.isO; }
+
+  setClass() {
+    return this.gameService.hasWinner().length && this.gameService.hasWinner().includes('' + this.loc)
+      ? "icon is-success" : "icon";
+  }
 }

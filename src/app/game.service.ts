@@ -24,14 +24,23 @@ export class GameService {
   }
 
   hasWinner() {
-    return (this.grid[0] == this.grid[1] && this.grid[1] == this.grid[2] && this.grid[1].length) ||
-      (this.grid[3] == this.grid[4] && this.grid[4] == this.grid[5] && this.grid[4].length) ||
-      (this.grid[6] == this.grid[7] && this.grid[7] == this.grid[8] && this.grid[7].length) ||
-      (this.grid[0] == this.grid[3] && this.grid[3] == this.grid[6] && this.grid[3].length) ||
-      (this.grid[1] == this.grid[4] && this.grid[4] == this.grid[7] && this.grid[4].length) ||
-      (this.grid[2] == this.grid[5] && this.grid[5] == this.grid[8] && this.grid[5].length) ||
-      (this.grid[0] == this.grid[4] && this.grid[4] == this.grid[8] && this.grid[4].length) ||
-      (this.grid[2] == this.grid[4] && this.grid[4] == this.grid[6] && this.grid[4].length);
+    if (this.grid[0] == this.grid[1] && this.grid[1] == this.grid[2] && this.grid[1].length)
+    { return "012" }
+    else if (this.grid[3] == this.grid[4] && this.grid[4] == this.grid[5] && this.grid[4].length)
+    { return "345" }
+    else if (this.grid[6] == this.grid[7] && this.grid[7] == this.grid[8] && this.grid[7].length)
+    { return "678" }
+    else if (this.grid[0] == this.grid[3] && this.grid[3] == this.grid[6] && this.grid[3].length)
+    { return "036" }
+    else if (this.grid[1] == this.grid[4] && this.grid[4] == this.grid[7] && this.grid[4].length)
+    { return "147" }
+    else if (this.grid[2] == this.grid[5] && this.grid[5] == this.grid[8] && this.grid[5].length)
+    { return "258" }
+    else if (this.grid[0] == this.grid[4] && this.grid[4] == this.grid[8] && this.grid[4].length)
+    { return "048" }
+    else if (this.grid[2] == this.grid[4] && this.grid[4] == this.grid[6] && this.grid[4].length)
+    { return "246" }
+    else { return ""; }
   }
 
   turnMark(): Observable<any> {
