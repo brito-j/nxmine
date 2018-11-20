@@ -1,0 +1,32 @@
+.page
+{
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.page-content
+{
+  display: inline-block;
+}
+
+.ex
+{
+  float: left;
+}
+
+.oh
+{
+  float: right;
+}
+
+.card
+{
+  background: #FFF1E6;
+}
+
+.card.clickable:hover
+{
+  box-shadow: 0 0.125rem 0 0 #485969;
+  border: 1px solid #485969;
+}
