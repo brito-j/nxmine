@@ -1,11 +1,11 @@
-<div class="page" *ngIf="showMarkSelection">
+<div class="page">
   <div class="page-content">
     <h1>Player One:</h1>
   </div>
   <div class="row">
     <div class="col-lg-6">
       <div class="card clickable ex" id="x1" (click)="selectMark(0)">
-        <clr-icon shape="window-close" size="72"></clr-icon>
+        <clr-icon shape="times" size="72"></clr-icon>
       </div>
     </div>
     <div class="col-lg-6">
@@ -21,7 +21,7 @@
   <div class="row">
     <div class="col-lg-6">
       <div class="card clickable ex" id="x2" (click)="selectMark(2)">
-        <clr-icon shape="window-close" size="72"></clr-icon>
+        <clr-icon shape="times" size="72"></clr-icon>
       </div>
     </div>
     <div class="col-lg-6">
@@ -30,10 +30,9 @@
       </div>
     </div>
   </div>
-
   <br>
-  <div class="card clickable" (click)="startGame()" *ngIf="hasSelection">
-    <button type="button" class="btn btn-link" (click)="startGame()">play</button>
+  <div class="card">
+    <button type="button" class="btn btn-link"
+            [disabled]="!hasSelection" (click)="startGame()">play</button>
   </div>
 </div>
-<app-grid *ngIf="showGrid"></app-grid>

@@ -11,7 +11,7 @@ export class GameService {
 
   grid: string[] = ['', '', '', '', '', '', '', '', ''];
 
-  turnCount: number = -1;
+  turnCount: number = 0;
 
   mineLoc: boolean[] = [false, false, false, false, false, false, false, false, false];
 
@@ -37,9 +37,8 @@ export class GameService {
   turnMark(): Observable<any> {
     let isFirstTurn: boolean = true;
     for (let i = 0; i < this.grid.length; i++) { if (this.grid[i].length) { isFirstTurn = false; } }
-    if (isFirstTurn) { this.setFirstTurn(); }
+    if (isFirstTurn && this.playerOne == 'x') { this.turnCount--; }
     this.turnCount++;
-    console.log(this.turnCount); //DELETE ME
     return of(this.turnCount % 2 == 0 ? 'x' : 'o');
   }
 
@@ -51,13 +50,4 @@ export class GameService {
     this.mineLoc[loc] = true;
   }
 
-  setFirstTurn() {
-    switch(this.playerOne) {
-      case 'x':
-        this.turnCount = -1;
-        break;
-      case 'o':
-        this.turnCount = 0;
-    }
-  }
 }

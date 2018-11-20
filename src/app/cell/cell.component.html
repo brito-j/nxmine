@@ -2,9 +2,9 @@
     <div class="card clickable" (click)="setMark(getTurnMark())">
       <div class="card-block">
         <p class="card-text">
-          <clr-icon shape="window-close" size="72" class="icon" *ngIf="isX"></clr-icon>
+          <clr-icon shape="times" size="72" class="icon" *ngIf="isX"></clr-icon>
           <clr-icon shape="circle" size="72" class="icon" *ngIf="isO"></clr-icon>
-          <clr-icon shape="flame" size="72" class="icon" *ngIf="isMine"></clr-icon>
+          <clr-icon shape="flame" size="72" class="is-error icon" *ngIf="isMine"></clr-icon>
         </p>
       </div>
     </div>

@@ -1,12 +1,12 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {GameService} from '../game.service';
 
 @Component({
-  selector: 'app-play',
-  templateUrl: './play.component.html',
-  styleUrls: ['./play.component.css']
+  selector: 'app-game-start',
+  templateUrl: './game-start.component.html',
+  styleUrls: ['./game-start.component.css']
 })
-export class PlayComponent implements OnInit {
+export class GameStartComponent implements OnInit {
 
   boxShadowStyle: string = '0 0.125rem 0 0 #485969';
 
@@ -14,14 +14,9 @@ export class PlayComponent implements OnInit {
 
   markBoxes: string[] = ['x1', 'o1', 'x2', 'o2'];
 
-  showGrid: boolean = false;
-
-  showMarkSelection: boolean = true;
-
   hasSelection: boolean = false;
 
-  constructor(private gameService: GameService) {
-  }
+  constructor(private gameService: GameService) { }
 
   ngOnInit() {
   }
@@ -52,11 +47,6 @@ export class PlayComponent implements OnInit {
     }
   }
 
-  startGame() {
-    this.showMarkSelection = false;
-    this.showGrid = true;
-  }
-
   styleCard(playerOneCard: string, playerTwoCard: string) {
     document.getElementById(playerOneCard).style.boxShadow = this.boxShadowStyle;
     document.getElementById(playerOneCard).style.border = this.borderStyle;
@@ -68,5 +58,7 @@ export class PlayComponent implements OnInit {
     this.gameService.playerOne = playerOneMark;
     this.gameService.playerTwo = playerTwoMark;
   }
+
+  startGame() { /* route to grid */ }
 
 }
