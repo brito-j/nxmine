@@ -1,0 +1,43 @@
+.card
+{
+  height: 4.5rem;
+  width: 6rem;
+  background: #F7F5ED;
+  margin: 0 auto;
+}
+
+.icon
+{
+  display: inline-block;
+}
+
+.card.clickable:hover
+{
+  box-shadow: 0 0.125rem 0 0 #485969;
+  border: 1px solid #485969;
+}
+
+.card-text
+{
+  text-align: center;
+}
+
+.sidenav-content
+{
+  text-align: center;
+}
+
+.sidenav-content-container
+{
+  display: inline-block;
+}
+
+.name-box
+{
+  outline: 3px dotted green;
+}
+
+.name
+{
+  padding: 25px;
+}

@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CellComponent } from './cell/cell.component';
 import { GameStartComponent } from './game-start/game-start.component';
 import { NavComponent } from './nav/nav.component';
+import { GameInfoComponent } from './game-info/game-info.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NavComponent } from './nav/nav.component';
     GridComponent,
     CellComponent,
     GameStartComponent,
-    NavComponent
+    NavComponent,
+    GameInfoComponent
   ],
   imports: [
     BrowserModule,

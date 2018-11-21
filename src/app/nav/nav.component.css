@@ -5,3 +5,14 @@ header .branding clr-icon
 {
   margin-right: 0rem;
 }
+
+.branding
+{
+  width: 9.6rem;
+}
+
+.nav-link
+{
+  width: 75%;
+  margin: 0 auto;
+}
