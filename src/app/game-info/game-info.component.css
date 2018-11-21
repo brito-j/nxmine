@@ -2,19 +2,13 @@
 {
   height: 4.5rem;
   width: 6rem;
-  background: #F7F5ED;
+  background: #F4F1E6;
   margin: 0 auto;
 }
 
 .icon
 {
   display: inline-block;
-}
-
-.card.clickable:hover
-{
-  box-shadow: 0 0.125rem 0 0 #485969;
-  border: 1px solid #485969;
 }
 
 .card-text
@@ -32,12 +26,12 @@
   display: inline-block;
 }
 
-.name-box
+.player-one-box, .player-two-box
 {
   outline: 3px dotted green;
 }
 
 .name
 {
-  padding: 25px;
+  padding: 20px;
 }

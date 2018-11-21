@@ -44,10 +44,12 @@ export class GameService {
   }
 
   turnMark(): Observable<any> {
+    if (this.hasWinner()) { return of([]); }
     let isFirstTurn: boolean = true;
     for (let i = 0; i < this.grid.length; i++) { if (this.grid[i].length) { isFirstTurn = false; } }
     if (isFirstTurn && this.playerOne == 'x') { this.turnCount--; }
     this.turnCount++;
+    console.log(this.turnCount);
     return of(this.turnCount % 2 == 0 ? 'x' : 'o');
   }
 
