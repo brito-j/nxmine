@@ -8,13 +8,15 @@ import { ClarityModule } from '@clr/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CellComponent } from './cell/cell.component';
 import { GameStartComponent } from './game-start/game-start.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GridComponent,
     CellComponent,
-    GameStartComponent
+    GameStartComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
