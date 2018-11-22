@@ -10,10 +10,13 @@ export class GameInfoComponent implements OnChanges {
 
   turnTitle: string = "Your Move:";
 
+  hasWinner: boolean = false;
+
   constructor(private gameService: GameService) { }
 
   ngOnChanges() {
     this.switchPlayerHighlight();
+    this.hasWinner = this.gameService.hasWinner().length > 0;
   }
 
   @Input('turn') turn: number;
