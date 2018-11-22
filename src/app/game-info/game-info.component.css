@@ -1,0 +1,42 @@
+.card
+{
+  height: 4.5rem;
+  width: 6rem;
+  background: #F4F1E6;
+  margin: 0 auto;
+}
+
+.icon
+{
+  display: inline-block;
+}
+
+.card-text
+{
+  text-align: center;
+}
+
+.sidenav-content
+{
+  text-align: center;
+}
+
+.sidenav-content-container
+{
+  display: inline-block;
+}
+
+.player-one-box, .player-two-box
+{
+  outline: 3px dotted green;
+}
+
+.name
+{
+  padding: 20px;
+}
+
+.save-game
+{
+  padding-top: 50px;
+}

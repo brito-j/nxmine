@@ -27,8 +27,8 @@ export class CellComponent implements OnChanges {
 
   setMark(mark: string) {
     if (this.isMarked() || this.gameService.hasWinner()) { return; }
+    if (this.mine && !this.isMine) { this.isMine = true; return; }
     if (this.isMine) { this.clearMark(); }
-    if (this.mine) { this.isMine = true; return; }
     switch (mark) { case 'x' : { this.isX = true; break; } case 'o' : { this.isO = true; break; } }
     this.gameService.updateGrid(this.loc, mark);
     this.gameService.setMineLoc();
