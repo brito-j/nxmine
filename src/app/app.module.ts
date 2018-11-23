@@ -11,6 +11,7 @@ import { GameStartComponent } from './game-start/game-start.component';
 import { NavComponent } from './nav/nav.component';
 import { GameInfoComponent } from './game-info/game-info.component';
 import { GameComponent } from './game/game.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { GameComponent } from './game/game.component';
     GameStartComponent,
     NavComponent,
     GameInfoComponent,
-    GameComponent
+    GameComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
