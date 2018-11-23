@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {GameService} from './game.service';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +7,4 @@ import {GameService} from './game.service';
 })
 export class AppComponent {
   title = 'BURNOUT';
-
-  constructor(private gameService: GameService) {}
-
-  getCurrentTurn() { return this.gameService.turnCount % 2; }
 }

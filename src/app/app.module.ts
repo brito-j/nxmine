@@ -10,6 +10,7 @@ import { CellComponent } from './cell/cell.component';
 import { GameStartComponent } from './game-start/game-start.component';
 import { NavComponent } from './nav/nav.component';
 import { GameInfoComponent } from './game-info/game-info.component';
+import { GameComponent } from './game/game.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { GameInfoComponent } from './game-info/game-info.component';
     CellComponent,
     GameStartComponent,
     NavComponent,
-    GameInfoComponent
+    GameInfoComponent,
+    GameComponent
   ],
   imports: [
     BrowserModule,
