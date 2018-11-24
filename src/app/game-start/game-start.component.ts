@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {GameService} from '../game.service';
-import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-game-start',
@@ -17,7 +16,7 @@ export class GameStartComponent implements OnInit {
 
   hasSelection: boolean = false;
 
-  constructor(private gameService: GameService, private router: Router) { }
+  constructor(private gameService: GameService) { }
 
   ngOnInit() {
   }
@@ -59,7 +58,5 @@ export class GameStartComponent implements OnInit {
     this.gameService.playerOne = playerOneMark;
     this.gameService.playerTwo = playerTwoMark;
   }
-
-  startGame() { this.router.navigateByUrl('/game'); }
 
 }
