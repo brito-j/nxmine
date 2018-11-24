@@ -11,7 +11,7 @@ export class GameService {
 
   grid: string[] = ['', '', '', '', '', '', '', '', ''];
 
-  turnCount: number = 0;
+  turnCount: number = -1;
 
   mineLoc: boolean[] = [false, false, false, false, false, false, false, false, false];
 
@@ -23,27 +23,33 @@ export class GameService {
 
   playerTwoMark: string = '';
 
+  xMineHitCount: number = 0;
+
+  oMineHitCount: number = 0;
+
+  winner: string = '';
+
   updateGrid(loc: number, val: string) {
     this.grid[loc] = val;
   }
 
   hasWinner() {
     if (this.grid[0] == this.grid[1] && this.grid[1] == this.grid[2] && this.grid[1].length)
-    { return "012" }
+    { this.setWinner(); return "012" }
     else if (this.grid[3] == this.grid[4] && this.grid[4] == this.grid[5] && this.grid[4].length)
-    { return "345" }
+    { this.setWinner(); return "345" }
     else if (this.grid[6] == this.grid[7] && this.grid[7] == this.grid[8] && this.grid[7].length)
-    { return "678" }
+    { this.setWinner(); return "678" }
     else if (this.grid[0] == this.grid[3] && this.grid[3] == this.grid[6] && this.grid[3].length)
-    { return "036" }
+    { this.setWinner(); return "036" }
     else if (this.grid[1] == this.grid[4] && this.grid[4] == this.grid[7] && this.grid[4].length)
-    { return "147" }
+    { this.setWinner(); return "147" }
     else if (this.grid[2] == this.grid[5] && this.grid[5] == this.grid[8] && this.grid[5].length)
-    { return "258" }
+    { this.setWinner(); return "258" }
     else if (this.grid[0] == this.grid[4] && this.grid[4] == this.grid[8] && this.grid[4].length)
-    { return "048" }
+    { this.setWinner(); return "048" }
     else if (this.grid[2] == this.grid[4] && this.grid[4] == this.grid[6] && this.grid[4].length)
-    { return "246" }
+    { this.setWinner(); return "246" }
     else { return ""; }
   }
 
@@ -68,7 +74,15 @@ export class GameService {
       this.updateGrid(i, '');
       this.mineLoc[i] = false;
     }
-    this.turnCount = 0;
+    this.turnCount = -1;
+    this.playerOneMark = '';
+    this.playerTwoMark = '';
+    this.winner = '';
+  }
+
+  setWinner() {
+    if (this.playerOneMark == 'x' && this.turnCount % 2 == 0) { this.winner = this.playerOne; }
+    else { this.winner = this.playerTwo; }
   }
 
 }
