@@ -3,40 +3,43 @@
     <div class="content-area">
       <div class="page">
         <div class="page-content">
-          <h1>Player One:</h1>
+          <h3>{{playerOne}}</h3>
+          <h4><input class="name" placeholder="Player One" type="text" [(ngModel)]="playerOne"/></h4>
         </div>
         <div class="row">
           <div class="col-lg-6">
             <div class="card clickable ex" id="x1" (click)="selectMark(0)">
-              <clr-icon shape="times" size="72"></clr-icon>
+              <clr-icon shape="times" size="48"></clr-icon>
             </div>
           </div>
           <div class="col-lg-6">
             <div class="card clickable oh" id="o1" (click)="selectMark(1)">
-              <clr-icon shape="circle" size="72"></clr-icon>
+              <clr-icon shape="circle" size="48"></clr-icon>
             </div>
           </div>
         </div>
 
         <div class="page-content">
-          <h1>Player Two:</h1>
+          <h3>{{playerTwo}}</h3>
+          <h4><input class="name" placeholder="Player Two" type="text" [(ngModel)]="playerTwo"/></h4>
         </div>
         <div class="row">
           <div class="col-lg-6">
             <div class="card clickable ex" id="x2" (click)="selectMark(2)">
-              <clr-icon shape="times" size="72"></clr-icon>
+              <clr-icon shape="times" size="48"></clr-icon>
             </div>
           </div>
           <div class="col-lg-6">
             <div class="card clickable oh" id="o2" (click)="selectMark(3)">
-              <clr-icon shape="circle" size="72"></clr-icon>
+              <clr-icon shape="circle" size="48"></clr-icon>
             </div>
           </div>
         </div>
         <br>
         <div class="card">
-          <button type="button" class="btn btn-link"
-                  [disabled]="!hasSelection" (click)="startGame()">play</button>
+          <button type="button" class="btn btn-link" (click)="setNames()"
+                  [disabled]="isReady()"
+                  [routerLink]="'/game'">play</button>
         </div>
       </div>
     </div>

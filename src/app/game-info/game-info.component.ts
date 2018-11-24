@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges} from '@angular/core';
+import {Component, Input, OnChanges, OnDestroy, OnInit} from '@angular/core';
 import {GameService} from '../game.service';
 
 @Component({
@@ -6,17 +6,31 @@ import {GameService} from '../game.service';
   templateUrl: './game-info.component.html',
   styleUrls: ['./game-info.component.css']
 })
-export class GameInfoComponent implements OnChanges {
+export class GameInfoComponent implements OnChanges, OnInit, OnDestroy {
 
   turnTitle: string = "Your Move:";
 
   hasWinner: boolean = false;
 
+  playerOne: string = '';
+
+  playerTwo: string = '';
+
   constructor(private gameService: GameService) { }
+
+  ngOnInit() {
+    this.playerOne = this.gameService.playerOne;
+    this.playerTwo = this.gameService.playerTwo;
+  }
 
   ngOnChanges() {
     this.switchPlayerHighlight();
     this.hasWinner = this.gameService.hasWinner().length > 0;
+    console.log(this.gameService.hasWinner());
+  }
+
+  ngOnDestroy(): void {
+    this.gameService.clearGame();
   }
 
   @Input('turn') turn: number;
@@ -46,5 +60,6 @@ export class GameInfoComponent implements OnChanges {
 
     }
   }
-
 }
+
+
