@@ -5,10 +5,10 @@
     <div id="player-two-box"><h3 class="name">Player Two</h3></div>
   </div>
   <div class="save-game" *ngIf="hasWinner">
-    <div class="card clickable">
-      <div class="card-block">
-        <h4>Save Game?</h4>
-      </div>
-    </div>
+    <button type="button" class="btn btn-info-outline">save game</button>
+    <button type="button" class="btn btn-success-outline"
+            [routerLink]="'/play'" (click)="clearGame()">play again</button>
+    <button type="button" class="btn btn-warning-outline"
+            [routerLink]="'/home'" (click)="clearGame()">return home</button>
   </div>
 </section>

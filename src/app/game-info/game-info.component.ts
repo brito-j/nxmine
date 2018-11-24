@@ -47,4 +47,7 @@ export class GameInfoComponent implements OnChanges {
     }
   }
 
+  clearGame() { this.gameService.clearGame(); }
 }
+
+
