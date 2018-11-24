@@ -19,6 +19,10 @@ export class GameService {
 
   playerTwo: string = 'Player Two';
 
+  playerOneMark: string = '';
+
+  playerTwoMark: string = '';
+
   updateGrid(loc: number, val: string) {
     this.grid[loc] = val;
   }
@@ -45,11 +49,9 @@ export class GameService {
 
   turnMark(): Observable<any> {
     if (this.hasWinner()) { return of([]); }
-    let isFirstTurn: boolean = true;
-    for (let i = 0; i < this.grid.length; i++) { if (this.grid[i].length) { isFirstTurn = false; } }
-    if (isFirstTurn && this.playerOne == 'x') { this.turnCount--; }
     this.turnCount++;
-    return of(this.turnCount % 2 == 0 ? 'x' : 'o');
+    if (this.playerOneMark == 'x') { return of(this.turnCount % 2 == 0 ? 'x' : 'o'); }
+    else { return of(this.turnCount % 2 == 0 ? 'o' : 'x'); }
   }
 
   setMineLoc() {
