@@ -15,9 +15,9 @@ export class GameService {
 
   mineLoc: boolean[] = [false, false, false, false, false, false, false, false, false];
 
-  playerOne: string = '';
+  playerOne: string = 'Player One';
 
-  playerTwo: string = '';
+  playerTwo: string = 'Player Two';
 
   updateGrid(loc: number, val: string) {
     this.grid[loc] = val;
@@ -58,6 +58,7 @@ export class GameService {
     }
     const loc = Math.floor(Math.random() * 8);
     this.mineLoc[loc] = true;
+    this.updateGrid(loc, '');
   }
 
   clearGame() {

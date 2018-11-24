@@ -16,6 +16,10 @@ export class GameStartComponent implements OnInit {
 
   hasSelection: boolean = false;
 
+  playerOne: string = '';
+
+  playerTwo: string = '';
+
   constructor(private gameService: GameService) { }
 
   ngOnInit() {
@@ -57,6 +61,15 @@ export class GameStartComponent implements OnInit {
   setPlayer(playerOneMark: string, playerTwoMark: string) {
     this.gameService.playerOne = playerOneMark;
     this.gameService.playerTwo = playerTwoMark;
+  }
+
+  setNames() {
+    this.gameService.playerOne = this.playerOne;
+    this.gameService.playerTwo = this.playerTwo;
+  }
+
+  isReady() {
+    return !(this.hasSelection && this.playerOne.length > 0 && this.playerTwo.length > 0);
   }
 
 }

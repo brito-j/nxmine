@@ -12,6 +12,7 @@ import { NavComponent } from './nav/nav.component';
 import { GameInfoComponent } from './game-info/game-info.component';
 import { GameComponent } from './game/game.component';
 import { HomeComponent } from './home/home.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HomeComponent } from './home/home.component';
     BrowserModule,
     AppRoutingModule,
     ClarityModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
