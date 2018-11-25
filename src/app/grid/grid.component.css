@@ -1,8 +1,10 @@
+/*restrict cell size*/
 .cell
 {
   width: 204px;
 }
 
+/*centers table*/
 .table
 {
   width: 50%;

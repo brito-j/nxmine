@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 import {GameService} from '../game.service';
 
 @Component({
@@ -6,13 +6,11 @@ import {GameService} from '../game.service';
   templateUrl: './grid.component.html',
   styleUrls: ['./grid.component.css']
 })
-export class GridComponent implements OnInit {
+export class GridComponent {
 
-  constructor(private gameService: GameService) { }
-
-  ngOnInit() {
+  constructor(private gameService: GameService) {
   }
 
-  getMineLoc(index: number): boolean { return this.gameService.mineLoc[index];
-  }
+  //returns if a cell location has a mine or not
+  getMineLoc(index: number): boolean { return this.gameService.mineLoc[index]; }
 }

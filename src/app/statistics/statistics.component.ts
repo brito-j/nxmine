@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {DataService} from '../data.service';
 
 @Component({
@@ -8,24 +8,13 @@ import {DataService} from '../data.service';
 })
 export class StatisticsComponent implements OnInit {
 
-  constructor(private dataService: DataService) { }
-
-  games: object[] = [];
-
-  players: object[] = [];
-
-  viewPlayerData: boolean = false;
-
-  viewTitle: string = 'View Player Data';
-
-  ngOnInit() {
-    this.dataService.getGames().subscribe(games => this.games.push(games));
-    this.dataService.getPlayers().subscribe(players => this.players.push(players));
+  constructor(private dataService: DataService) {
   }
 
-  switchView() {
-    this.viewPlayerData = !this.viewPlayerData;
-    this.viewTitle = this.viewPlayerData ? 'View Game Data' : 'View Player Data';
-  }
+  //stores game data from database to be displayed
+  games: any = [];
+
+  //subscribes to game data from database to be displayed
+  ngOnInit() { this.dataService.getGames().subscribe(games => this.games = games); }
 
 }

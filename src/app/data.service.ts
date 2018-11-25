@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
 @Injectable({
@@ -6,17 +6,13 @@ import {HttpClient} from '@angular/common/http';
 })
 export class DataService {
 
-  constructor(private http: HttpClient) { }
-
-  getGames() {
-    return this.http.get('http://localhost/cgi-bin/nxmine/get-games.pl');
+  constructor(private http: HttpClient) {
   }
 
-  getPlayers() {
-    return this.http.get('http://localhost/cgi-bin/nxmine/get-players.pl');
-  }
+  //gets all game statistics data from the database
+  getGames() { return this.http.get('http://localhost/cgi-bin/nxmine/get-games.pl'); }
 
-  setGames(data: FormData) {
-    return this.http.post('http://localhost/cgi-bin/nxmine/set-games.pl', data);
-  }
+  //saves new game statistics data to the database
+  setGames(data: FormData)
+    { return this.http.post('http://localhost/cgi-bin/nxmine/set-games.pl', data); }
 }

@@ -1,3 +1,4 @@
+/*remove extraneous spacing*/
 .header .branding .clr-icon,
 .header .branding clr-icon,
 header .branding .clr-icon,
@@ -6,13 +7,20 @@ header .branding clr-icon
   margin-right: 0rem;
 }
 
+/*set width to align with sidenav view*/
 .branding
 {
-  width: 9.45rem;
+  width: 18%;
 }
 
-.nav-link
+/*restrict width of header navigation links*/
+.title, .comp
 {
   width: 75%;
   margin: 0 auto;
+}
+
+.header-actions
+{
+  text-align: right;
 }

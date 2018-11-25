@@ -1,9 +1,13 @@
 <section class="sidenav-content">
+  <!--highlights the name of the player whose current turn it is-->
+  <!--highlights the name of the winner-->
   <div class="sidenav-content-container">
     <h3>{{turnTitle}}</h3>
     <div id="player-one-box"><h4 class="name">{{playerOne}}</h4></div>
     <div id="player-two-box"><h4 class="name">{{playerTwo}}</h4></div>
   </div>
+  <!--provides save game options-->
+  <!--allows player to save game statistics, play again, or return home-->
   <div class="save-game" *ngIf="hasWinner">
     <button type="button" class="btn btn-link"
             [routerLink]="'/statistics'" (click)="setGames()">save game</button>

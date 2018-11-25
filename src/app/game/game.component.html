@@ -1,8 +1,11 @@
 <div class="main-container">
   <div class="content-container">
+    <!--shows the game info sidenav on the left-->
     <nav class="sidenav">
+      <!--passes the current turn as an input to the game info sidenav-->
       <app-game-info [turn]="getCurrentTurn()"></app-game-info>
     </nav>
+    <!--shows the game grid on the right-->
     <div class="content-area">
       <app-grid></app-grid>
     </div>
