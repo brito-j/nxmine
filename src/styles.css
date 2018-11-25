@@ -2,3 +2,8 @@
 {
   text-align: center;
 }
+
+.datagrid-body, .datagrid-placeholder, .datagrid-foot, .datagrid .datagrid-head
+{
+  background: #F7F5ED;
+}

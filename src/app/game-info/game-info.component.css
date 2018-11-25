@@ -1,21 +1,3 @@
-.card
-{
-  height: 4.5rem;
-  width: 6rem;
-  background: #F4F1E6;
-  margin: 0 auto;
-}
-
-.icon
-{
-  display: inline-block;
-}
-
-.card-text
-{
-  text-align: center;
-}
-
 .sidenav-content
 {
   text-align: center;
