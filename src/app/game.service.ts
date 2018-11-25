@@ -1,12 +1,13 @@
 import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
+import {DataService} from './data.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GameService {
 
-  constructor() {
+  constructor(private dataService: DataService) {
   }
 
   grid: string[] = ['', '', '', '', '', '', '', '', ''];
@@ -26,6 +27,10 @@ export class GameService {
   xMineHitCount: number = 0;
 
   oMineHitCount: number = 0;
+
+  p1MineHitCount: string = '';
+
+  p2MineHitCount: string = '';
 
   winner: string = '';
 
@@ -81,8 +86,30 @@ export class GameService {
   }
 
   setWinner() {
-    if (this.playerOneMark == 'x' && this.turnCount % 2 == 0) { this.winner = this.playerOne; }
-    else { this.winner = this.playerTwo; }
+    this.winner = this.turnCount % 2 == 0 ? this.playerOne : this.playerTwo;
+    if (this.playerOneMark == 'x') {
+      this.p1MineHitCount = '' + this.xMineHitCount;
+      this.p2MineHitCount = '' + this.oMineHitCount;
+    } else {
+      this.p1MineHitCount = '' + this.oMineHitCount;
+      this.p2MineHitCount = '' + this.xMineHitCount;
+    }
+    this.compileData();
+  }
+
+  compileData() {
+    let data: FormData = new FormData();
+    data.append('p1_name', this.playerOne);
+    data.append('p2_name', this.playerTwo);
+    data.append('winner', this.winner);
+    data.append('p1_mines', this.p1MineHitCount);
+    data.append('p2_mines', this.p2MineHitCount);
+    data.append('turns', '' + this.turnCount);
+    return data;
+  }
+
+  setGames() {
+    this.dataService.setGames(this.compileData()).subscribe();
   }
 
 }

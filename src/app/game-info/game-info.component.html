@@ -6,7 +6,7 @@
   </div>
   <div class="save-game" *ngIf="hasWinner">
     <button type="button" class="btn btn-link"
-            [routerLink]="'/statistics'">save game</button>
+            [routerLink]="'/statistics'" (click)="setGames()">save game</button>
     <br>
     <button type="button" class="btn btn-link"
             [routerLink]="'/play'">play again</button>
