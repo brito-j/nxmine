@@ -1,3 +1,5 @@
+/* global styles for datagrid */
+
 .datagrid .datagrid-column .datagrid-column-title, .datagrid .datagrid-cell
 {
   text-align: center;
