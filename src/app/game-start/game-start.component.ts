@@ -69,7 +69,8 @@ export class GameStartComponent implements OnInit {
   }
 
   isReady() {
-    return !(this.hasSelection && this.playerOne.length > 0 && this.playerTwo.length > 0);
+    return !(this.hasSelection && this.playerOne.length > 0 && this.playerTwo.length > 0
+      && this.playerOne != this.playerTwo);
   }
 
 }

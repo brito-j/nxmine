@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import {FormsModule} from '@angular/forms';
 import { StatisticsComponent } from './statistics/statistics.component';
 import {HttpClientModule} from '@angular/common/http';
+import { HowToPlayComponent } from './how-to-play/how-to-play.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {HttpClientModule} from '@angular/common/http';
     GameInfoComponent,
     GameComponent,
     HomeComponent,
-    StatisticsComponent
+    StatisticsComponent,
+    HowToPlayComponent
   ],
   imports: [
     BrowserModule,
