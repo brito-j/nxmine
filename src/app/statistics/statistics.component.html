@@ -1,7 +1,9 @@
 <div class="main-container">
   <div class="content-container">
     <div class="content-area">
+      <!--datagrid to organize and display game statistics data-->
       <clr-datagrid>
+
         <clr-dg-column>Player One</clr-dg-column>
         <clr-dg-column>Player Two</clr-dg-column>
         <clr-dg-column>Time and Date</clr-dg-column>
@@ -9,6 +11,7 @@
         <clr-dg-column>Player One Mine Hits</clr-dg-column>
         <clr-dg-column>Player Two Mine Hits</clr-dg-column>
         <clr-dg-column>Turns</clr-dg-column>
+
         <clr-dg-row *ngFor="let game of games">
           <clr-dg-cell>{{game.p1_name}}</clr-dg-cell>
           <clr-dg-cell>{{game.p2_name}}</clr-dg-cell>
@@ -18,6 +21,7 @@
           <clr-dg-cell>{{game.p2_mines}}</clr-dg-cell>
           <clr-dg-cell>{{game.turns}}</clr-dg-cell>
         </clr-dg-row>
+
         <clr-dg-footer>{{games.length}} games</clr-dg-footer>
       </clr-datagrid>
     </div>

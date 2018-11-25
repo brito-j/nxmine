@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {DataService} from '../data.service';
 
 @Component({
@@ -8,12 +8,13 @@ import {DataService} from '../data.service';
 })
 export class StatisticsComponent implements OnInit {
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService) {
+  }
 
+  //stores game data from database to be displayed
   games: any = [];
 
-  ngOnInit() {
-    this.dataService.getGames().subscribe(games => this.games = games);
-  }
+  //subscribes to game data from database to be displayed
+  ngOnInit() { this.dataService.getGames().subscribe(games => this.games = games); }
 
 }
