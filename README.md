@@ -1,27 +1,20 @@
-# Nxmine
+# B U R N O U T
+> <b>Burnout</b> is a variant of tic-tac-toe with an added element of chance.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.3.
+The goal of <b>Burnout</b> is to successfully place three marks in a horizontal, vertical, or diagonal row in spite of randomly generated mines that clear previously placed marks.
 
-## Development server
+Marks cleared by mines can be placed again by clicking on the mine. A mine that is clicked but not replaced by a mark is a new mine randomly generated on that turn and at that location.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Once the game is won, the statistics for the game can be saved and viewed later on the <i>Statistics</i> page.
 
-## Code scaffolding
+Good luck!
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+![](header.png)
 
-## Build
+## Meta
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Jason Brito
 
-## Running unit tests
+[https://github.com/brito-j](https://github.com/brito-j)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+11.25.2018
