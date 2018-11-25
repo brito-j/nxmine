@@ -1,10 +1,14 @@
 <div class="main-container">
   <div class="content-container">
     <div class="content-area">
+      <!--centers all content in page-->
       <div class="page">
+        <!--name of player one-->
         <div class="page-content">
           <h4><input class="name" placeholder="Player One" type="text" [(ngModel)]="playerOne"/></h4>
         </div>
+
+        <!--mark selection for player one-->
         <div class="row">
           <div class="col-lg-6">
             <div class="card clickable ex" id="x1" (click)="selectMark(0)">
@@ -18,9 +22,12 @@
           </div>
         </div>
 
+        <!--name of player two-->
         <div class="page-content">
           <h4><input class="name" placeholder="Player Two" type="text" [(ngModel)]="playerTwo"/></h4>
         </div>
+
+        <!--mark selection for player two-->
         <div class="row">
           <div class="col-lg-6">
             <div class="card clickable ex" id="x2" (click)="selectMark(2)">
@@ -34,9 +41,12 @@
           </div>
         </div>
         <br>
+
+        <!--button to navigate to game grid when ready-->
         <button type="button" class="btn btn-link" (click)="setNames()"
                 [disabled]="isReady()"
-                [routerLink]="'/game'">play</button>
+                [routerLink]="'/game'">play
+        </button>
       </div>
     </div>
   </div>
