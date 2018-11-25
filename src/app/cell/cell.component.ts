@@ -15,7 +15,6 @@ export class CellComponent implements OnChanges {
   constructor(private gameService: GameService) { }
 
   ngOnChanges() {
-    console.log(this.gameService.winner);
     if (this.mine && this.isMarked()) {
       if (this.isX) { this.gameService.xMineHitCount++; }
       else { this.gameService.oMineHitCount++; }
