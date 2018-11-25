@@ -59,6 +59,8 @@ export class GameInfoComponent implements OnChanges, OnInit, OnDestroy {
 
     }
   }
+
+  setGames() { this.gameService.setGames(); }
 }
 
 

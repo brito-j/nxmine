@@ -1,0 +1,47 @@
+<div class="main-container">
+  <div class="content-container">
+    <div class="content-area">
+      <div class="row">
+        <div class="col-lg-4">
+          <h3>The goal of <b><b>Burnout</b></b> is to successfully place three marks in a
+            horizontal, vertical, or diagonal row in spite of randomly generated mines
+            that clear previously placed marks.</h3>
+          <br>
+          <div class="card">
+            <div class="card-block">
+              <p class="card-text">
+                <clr-icon shape="times" size="72" class="icon"></clr-icon>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card clickable" (click)="switchIcon = !switchIcon">
+            <div class="card-block">
+              <p class="card-text">
+                <clr-icon shape="times" size="72" class="icon" *ngIf="switchIcon"></clr-icon>
+                <clr-icon shape="flame" size="72" class="is-error icon" *ngIf="!switchIcon"></clr-icon>
+              </p>
+            </div>
+          </div>
+          <br>
+          <h3>Marks cleared by mines can be placed again by clicking on the mine.
+            A mine that is clicked but not replaced by a mark is a new
+            mine randomly generated then and there.</h3>
+        </div>
+        <div class="col-lg-4">
+          <h3>Once the game is won, the statistics for the game can be saved and
+            viewed later on the <i>Statistics</i> page.</h3>
+          <br>
+          <div class="card">
+            <div class="card-block">
+              <p class="card-text">
+                <clr-icon shape="circle" size="72" class="is-success icon"></clr-icon>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

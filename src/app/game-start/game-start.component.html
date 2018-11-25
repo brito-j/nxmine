@@ -3,7 +3,6 @@
     <div class="content-area">
       <div class="page">
         <div class="page-content">
-          <h3>{{playerOne}}</h3>
           <h4><input class="name" placeholder="Player One" type="text" [(ngModel)]="playerOne"/></h4>
         </div>
         <div class="row">
@@ -20,7 +19,6 @@
         </div>
 
         <div class="page-content">
-          <h3>{{playerTwo}}</h3>
           <h4><input class="name" placeholder="Player Two" type="text" [(ngModel)]="playerTwo"/></h4>
         </div>
         <div class="row">
@@ -36,11 +34,9 @@
           </div>
         </div>
         <br>
-        <div class="card">
-          <button type="button" class="btn btn-link" (click)="setNames()"
-                  [disabled]="isReady()"
-                  [routerLink]="'/game'">play</button>
-        </div>
+        <button type="button" class="btn btn-link" (click)="setNames()"
+                [disabled]="isReady()"
+                [routerLink]="'/game'">play</button>
       </div>
     </div>
   </div>
