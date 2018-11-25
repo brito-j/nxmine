@@ -12,10 +12,6 @@ export class DataService {
     return this.http.get('http://localhost/cgi-bin/nxmine/get-games.pl');
   }
 
-  getPlayers() {
-    return this.http.get('http://localhost/cgi-bin/nxmine/get-players.pl');
-  }
-
   setGames(data: FormData) {
     return this.http.post('http://localhost/cgi-bin/nxmine/set-games.pl', data);
   }

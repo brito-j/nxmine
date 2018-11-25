@@ -1,9 +1,7 @@
 <div class="main-container">
   <div class="content-container">
     <div class="content-area">
-      <button type="button" class="btn btn-link" (click)="switchView()">{{viewTitle}}</button>
-
-      <clr-datagrid *ngIf="!viewPlayerData">
+      <clr-datagrid>
         <clr-dg-column>Player One</clr-dg-column>
         <clr-dg-column>Player Two</clr-dg-column>
         <clr-dg-column>Time and Date</clr-dg-column>
@@ -21,26 +19,6 @@
           <clr-dg-cell>{{game.turns}}</clr-dg-cell>
         </clr-dg-row>
         <clr-dg-footer>{{games.length}} games</clr-dg-footer>
-      </clr-datagrid>
-
-      <clr-datagrid *ngIf="viewPlayerData">
-        <clr-dg-column>Player</clr-dg-column>
-        <clr-dg-column>Time and Date</clr-dg-column>
-        <clr-dg-column>Games Played</clr-dg-column>
-        <clr-dg-column>Games Won</clr-dg-column>
-        <clr-dg-column>Games Lost</clr-dg-column>
-        <clr-dg-column>Mines Hit</clr-dg-column>
-        <clr-dg-column>Fewest Turns to Win</clr-dg-column>
-        <clr-dg-row *ngFor="let player of players">
-          <clr-dg-cell>{{player.name}}</clr-dg-cell>
-          <clr-dg-cell>{{player.datetime}}</clr-dg-cell>
-          <clr-dg-cell>{{player.played}}</clr-dg-cell>
-          <clr-dg-cell>{{player.won}}</clr-dg-cell>
-          <clr-dg-cell>{{player.lost}}</clr-dg-cell>
-          <clr-dg-cell>{{player.mines_hit}}</clr-dg-cell>
-          <clr-dg-cell>{{player.turns_to_win}}</clr-dg-cell>
-        </clr-dg-row>
-        <clr-dg-footer>{{players.length}} players</clr-dg-footer>
       </clr-datagrid>
     </div>
   </div>
