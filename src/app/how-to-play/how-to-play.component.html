@@ -10,7 +10,7 @@
           <div class="card">
             <div class="card-block">
               <p class="card-text">
-                <clr-icon shape="flame" size="72" class="is-error icon"></clr-icon>
+                <clr-icon shape="times" size="72" class="icon"></clr-icon>
               </p>
             </div>
           </div>
@@ -19,8 +19,8 @@
           <div class="card clickable" (click)="switchIcon = !switchIcon">
             <div class="card-block">
               <p class="card-text">
-                <clr-icon shape="times" size="72" class="icon" *ngIf="!switchIcon"></clr-icon>
-                <clr-icon shape="flame" size="72" class="is-error icon" *ngIf="switchIcon"></clr-icon>
+                <clr-icon shape="times" size="72" class="icon" *ngIf="switchIcon"></clr-icon>
+                <clr-icon shape="flame" size="72" class="is-error icon" *ngIf="!switchIcon"></clr-icon>
               </p>
             </div>
           </div>
