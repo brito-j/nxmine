@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 import {GameService} from '../game.service';
 
 @Component({
@@ -6,13 +6,12 @@ import {GameService} from '../game.service';
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.css']
 })
-export class GameComponent implements OnInit {
+export class GameComponent {
 
-  constructor(private gameService: GameService) { }
-
-  ngOnInit() {
+  constructor(private gameService: GameService) {
   }
 
-  getCurrentTurn() { return (this.gameService.turnCount + 1) % 2; }
+  //returns the current turn % 2 to switch between player one and player two
+  getCurrentTurn() : number { return (this.gameService.turnCount + 1) % 2; }
 
 }
