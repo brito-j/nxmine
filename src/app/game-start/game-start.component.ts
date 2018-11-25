@@ -59,8 +59,8 @@ export class GameStartComponent implements OnInit {
   }
 
   setPlayer(playerOneMark: string, playerTwoMark: string) {
-    this.gameService.playerOne = playerOneMark;
-    this.gameService.playerTwo = playerTwoMark;
+    this.gameService.playerOneMark = playerOneMark;
+    this.gameService.playerTwoMark = playerTwoMark;
   }
 
   setNames() {

@@ -1,0 +1,51 @@
+<div class="main-container">
+  <div class="content-container">
+    <div class="content-area">
+      <button type="button" class="btn btn-info-outline" (click)="switchView()">{{viewTitle}}</button>
+
+      <clr-datagrid *ngIf="!viewPlayerData">
+        <clr-dg-column>ID</clr-dg-column>
+        <clr-dg-column>Player One</clr-dg-column>
+        <clr-dg-column>Player Two</clr-dg-column>
+        <clr-dg-column>Time and Date</clr-dg-column>
+        <clr-dg-column>Winner</clr-dg-column>
+        <clr-dg-column>Player One Mine Hits</clr-dg-column>
+        <clr-dg-column>Player Two Mine Hits</clr-dg-column>
+        <clr-dg-column>Turns</clr-dg-column>
+        <clr-dg-row *ngFor="let game of games">
+          <clr-dg-cell>{{game.id}}</clr-dg-cell>
+          <clr-dg-cell>{{game.p1_name}}</clr-dg-cell>
+          <clr-dg-cell>{{game.p2_name}}</clr-dg-cell>
+          <clr-dg-cell>{{game.datetime}}</clr-dg-cell>
+          <clr-dg-cell>{{game.winner}}</clr-dg-cell>
+          <clr-dg-cell>{{game.p1_mines}}</clr-dg-cell>
+          <clr-dg-cell>{{game.p2_mines}}</clr-dg-cell>
+          <clr-dg-cell>{{game.turns}}</clr-dg-cell>
+        </clr-dg-row>
+        <clr-dg-footer>{{games.length}} games</clr-dg-footer>
+      </clr-datagrid>
+
+      <clr-datagrid *ngIf="viewPlayerData">
+        <clr-dg-column>ID</clr-dg-column>
+        <clr-dg-column>Player</clr-dg-column>
+        <clr-dg-column>Time and Date</clr-dg-column>
+        <clr-dg-column>Games Played</clr-dg-column>
+        <clr-dg-column>Games Won</clr-dg-column>
+        <clr-dg-column>Games Lost</clr-dg-column>
+        <clr-dg-column>Mines Hit</clr-dg-column>
+        <clr-dg-column>Fewest Turns to Win</clr-dg-column>
+        <clr-dg-row *ngFor="let player of players">
+          <clr-dg-cell>{{player.id}}</clr-dg-cell>
+          <clr-dg-cell>{{player.name}}</clr-dg-cell>
+          <clr-dg-cell>{{player.datetime}}</clr-dg-cell>
+          <clr-dg-cell>{{player.played}}</clr-dg-cell>
+          <clr-dg-cell>{{player.won}}</clr-dg-cell>
+          <clr-dg-cell>{{player.lost}}</clr-dg-cell>
+          <clr-dg-cell>{{player.mines_hit}}</clr-dg-cell>
+          <clr-dg-cell>{{player.turns_to_win}}</clr-dg-cell>
+        </clr-dg-row>
+        <clr-dg-footer>{{players.length}} players</clr-dg-footer>
+      </clr-datagrid>
+    </div>
+  </div>
+</div>

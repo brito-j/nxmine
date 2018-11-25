@@ -13,6 +13,8 @@ import { GameInfoComponent } from './game-info/game-info.component';
 import { GameComponent } from './game/game.component';
 import { HomeComponent } from './home/home.component';
 import {FormsModule} from '@angular/forms';
+import { StatisticsComponent } from './statistics/statistics.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,14 +25,16 @@ import {FormsModule} from '@angular/forms';
     NavComponent,
     GameInfoComponent,
     GameComponent,
-    HomeComponent
+    HomeComponent,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ClarityModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

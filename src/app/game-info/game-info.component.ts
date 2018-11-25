@@ -26,7 +26,6 @@ export class GameInfoComponent implements OnChanges, OnInit, OnDestroy {
   ngOnChanges() {
     this.switchPlayerHighlight();
     this.hasWinner = this.gameService.hasWinner().length > 0;
-    console.log(this.gameService.hasWinner());
   }
 
   ngOnDestroy(): void {

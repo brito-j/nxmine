@@ -4,11 +4,13 @@
     <div id="player-one-box"><h4 class="name">{{playerOne}}</h4></div>
     <div id="player-two-box"><h4 class="name">{{playerTwo}}</h4></div>
   </div>
-  <div class="save-game" *ngIf="hasWinner">
-    <button type="button" class="btn btn-info-outline">save game</button>
-    <button type="button" class="btn btn-success-outline"
+  <div class="save-game" *ngIf="true">
+    <button type="button" class="btn btn-link"
+            [routerLink]="'/statistics'">save game</button>
+    <br>
+    <button type="button" class="btn btn-link"
             [routerLink]="'/play'">play again</button>
-    <button type="button" class="btn btn-warning-outline"
+    <button type="button" class="btn btn-link"
             [routerLink]="'/home'">return home</button>
   </div>
 </section>

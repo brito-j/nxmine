@@ -13,6 +13,6 @@ export class GameComponent implements OnInit {
   ngOnInit() {
   }
 
-  getCurrentTurn() { return this.gameService.turnCount % 2; }
+  getCurrentTurn() { return (this.gameService.turnCount + 1) % 2; }
 
 }
