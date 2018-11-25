@@ -1,9 +1,11 @@
+/*centers content within element*/
 .content-area
 {
   background: #F4F1E6;
   text-align: center;
 }
 
+/*centers content*/
 .title, .icon
 {
   display: inline-block;
