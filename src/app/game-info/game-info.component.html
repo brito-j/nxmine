@@ -4,7 +4,7 @@
     <div id="player-one-box"><h4 class="name">{{playerOne}}</h4></div>
     <div id="player-two-box"><h4 class="name">{{playerTwo}}</h4></div>
   </div>
-  <div class="save-game" *ngIf="true">
+  <div class="save-game" *ngIf="hasWinner">
     <button type="button" class="btn btn-link"
             [routerLink]="'/statistics'">save game</button>
     <br>
