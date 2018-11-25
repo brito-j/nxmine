@@ -14,8 +14,13 @@ header .branding clr-icon
 }
 
 /*restrict width of header navigation links*/
-.nav-link
+.title, .comp
 {
   width: 75%;
   margin: 0 auto;
+}
+
+.header-actions
+{
+  text-align: right;
 }
