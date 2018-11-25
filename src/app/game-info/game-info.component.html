@@ -5,7 +5,8 @@
     <div id="player-two-box"><h4 class="name">{{playerTwo}}</h4></div>
   </div>
   <div class="save-game" *ngIf="true">
-    <button type="button" class="btn btn-link">save game</button>
+    <button type="button" class="btn btn-link"
+            [routerLink]="'/statistics'">save game</button>
     <br>
     <button type="button" class="btn btn-link"
             [routerLink]="'/play'">play again</button>

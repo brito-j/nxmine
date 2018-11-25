@@ -9,6 +9,10 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   getGames() {
-    return this.http.get('http://localhost/cgi-bin/nxmine/get_games.pl');
+    return this.http.get('http://localhost/cgi-bin/nxmine/get-games.pl');
+  }
+
+  getPlayers() {
+    return this.http.get('http://localhost/cgi-bin/nxmine/get-players.pl');
   }
 }

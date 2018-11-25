@@ -12,8 +12,20 @@ export class StatisticsComponent implements OnInit {
 
   games: object[] = [];
 
+  players: object[] = [];
+
+  viewPlayerData: boolean = false;
+
+  viewTitle: string = 'View Player Data';
+
   ngOnInit() {
     this.dataService.getGames().subscribe(games => this.games.push(games));
+    this.dataService.getPlayers().subscribe(players => this.players.push(players));
+  }
+
+  switchView() {
+    this.viewPlayerData = !this.viewPlayerData;
+    this.viewTitle = this.viewPlayerData ? 'View Game Data' : 'View Player Data';
   }
 
 }
