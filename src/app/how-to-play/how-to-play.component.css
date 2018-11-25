@@ -1,9 +1,11 @@
+/*centers content*/
 .content-area
 {
   background: #F4F1E6;
   text-align: center;
 }
 
+/*sets card color and dimensions*/
 .card
 {
   height: 4.5rem;
@@ -12,12 +14,14 @@
   margin: 0 auto;
 }
 
+/*centers icon within card*/
 .icon
 {
   width: 50%;
   margin: 0 auto;
 }
 
+/*sets card hover color to header navigation color*/
 .card.clickable:hover
 {
   box-shadow: 0 0.125rem 0 0 #485969;
