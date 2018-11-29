@@ -1,9 +1,0 @@
-<!--card view-->
-<div class="card clickable" (click)="setMark(getTurnMark())">
-  <div class="card-block">
-    <!--icon view-->
-    <clr-icon shape="times" size="72" [ngClass]="setClass()" *ngIf="isX"></clr-icon>
-    <clr-icon shape="circle" size="72" [ngClass]="setClass()" *ngIf="isO"></clr-icon>
-    <clr-icon shape="flame" size="72" class="is-error icon" *ngIf="isMine"></clr-icon>
-  </div>
-</div>
