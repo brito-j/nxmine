@@ -9,8 +9,6 @@ Once the game is won, the statistics for the game can be saved and viewed later 
 
 Good luck!
 
-![](header.png)
-
 ## Meta
 
 Jason Brito
